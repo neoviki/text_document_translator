@@ -31,7 +31,26 @@ for l in lines:
         continue
 
     ltxt = str(l.strip())
-    ttxt = get_english_translation(ltxt)
+
+    ctr=0
+    tsuccess=False
+    while True:
+        ctr+=1
+        try:
+            ttxt = get_english_translation(ltxt)
+        except:
+            if ctr >= 4:
+                break
+            else:
+                continue
+        else:
+            tsuccess=True
+            break
+
+    if tsuccess == False:
+        print("error: translation ( unknown reason ), try again")
+        print("\n")
+        exit(1)
 
     print("   "+ltxt)
     print("   "+ttxt)
