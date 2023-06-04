@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python3 /usr/local/bin/transtext.py $1 $2
