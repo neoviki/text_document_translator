@@ -26,6 +26,10 @@ lines = fp_in.readlines()
 
 print("Translation Text File [ " +f_in+" ]\n")
 for l in lines:
+    
+    if len(l.strip()) == 0:
+        continue
+
     ltxt = str(l.strip())
     ttxt = get_english_translation(ltxt)
 
